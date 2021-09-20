@@ -19,7 +19,7 @@ export default {
   width: 100%;
   margin: 0;
   height: 50px;
-  background: lightslategray;
+  background: none;
   position: relative;
 
 }

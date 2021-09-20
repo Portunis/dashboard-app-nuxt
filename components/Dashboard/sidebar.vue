@@ -1,7 +1,7 @@
 <template>
 <div>
   <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse" :router="true">
-    <el-submenu index="1">
+    <el-submenu  class="el-menu-item el-menu-item-hover" index="1">
       <template slot="title">
         <i class="el-icon-location"></i>
         <span slot="title">Групповое меню(вложенности)</span>
@@ -19,17 +19,17 @@
         <el-menu-item index="1-4-1">4</el-menu-item>
       </el-submenu>
     </el-submenu>
-    <el-menu-item index="/dashboard" :route="{ name: 'dashboard' }" >
+    <el-menu-item class="el-menu-item" index="/dashboard" :route="{ name: 'dashboard' }" >
       <i class="el-icon-menu"></i>
       <span slot="title" >
          Главная
         </span>
     </el-menu-item>
-    <el-menu-item index="3" disabled>
+    <el-menu-item class="el-menu-item" index="3" disabled>
       <i class="el-icon-document"></i>
       <span slot="title">Без доступа</span>
     </el-menu-item>
-    <el-menu-item  index="/about" :route="{ name: 'dashboard-settings' }">
+    <el-menu-item class="el-menu-item"  index="/about" :route="{ name: 'dashboard-settings' }">
 
       <i class="el-icon-setting"></i>
       <span >Настройки</span>
@@ -76,13 +76,24 @@ export default {
   position: absolute;
   left: 0;
   top: 0;
-  background: lightslategray;
   margin-right: 50px;
 }
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 300px;
   min-height: 400px;
   height: 100vh;
+  background-color: rgb(22, 28, 36) !important;
 }
+.el-menu-item{
+  color: #fff;
+}
+.is-active{
+  background: #7d6aa5 !important;
+}
+.el-menu-item-hover{
+  &:hover{
+    background-color: #7d6aa5 !important;
+  }
 
+}
 </style>

@@ -6,13 +6,7 @@
       <Sidebar />
     </div>
     <div class="container">
-      <div class="breadcrumb">
-        <el-breadcrumb separator-class="el-icon-arrow-right">
-          <el-breadcrumb-item :to="{ path: '/dashboard' }">Главная</el-breadcrumb-item>
-          <el-breadcrumb-item>Что то </el-breadcrumb-item>
 
-        </el-breadcrumb>
-      </div>
       <div id="content" class="content">
         <Nuxt />
       </div>
@@ -35,8 +29,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "assets/scss/dashboard/global";
 html{
   overflow-y:  hidden;
+}
+body{
+  background-color: rgb(22, 28, 36) !important;
 }
 .content__all{
   display: flex;

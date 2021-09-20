@@ -133,6 +133,11 @@
 
 <script>
 export default {
+  head(){
+    return {
+      title: '404'
+    }
+  },
   name: "error404",
 
 }
