@@ -1,24 +1,6 @@
 <template>
 <div>
   <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse" :router="true">
-    <el-submenu  class="el-menu-item el-menu-item-hover" index="1">
-      <template slot="title">
-        <i class="el-icon-location"></i>
-        <span slot="title">Групповое меню(вложенности)</span>
-      </template>
-      <el-menu-item-group>
-        <span slot="title">Группа 1</span>
-        <el-menu-item index="1-1">1</el-menu-item>
-        <el-menu-item index="1-2">2</el-menu-item>
-      </el-menu-item-group>
-      <el-menu-item-group title="Группа 2">
-        <el-menu-item index="1-3">3</el-menu-item>
-      </el-menu-item-group>
-      <el-submenu index="1-4">
-        <span slot="title">4</span>
-        <el-menu-item index="1-4-1">4</el-menu-item>
-      </el-submenu>
-    </el-submenu>
     <el-menu-item class="el-menu-item" index="/dashboard" :route="{ name: 'dashboard' }" >
       <i class="el-icon-menu"></i>
       <span slot="title" >
@@ -75,8 +57,12 @@ export default {
   height: 100vh;
   position: absolute;
   left: 0;
-  top: 0;
+  top: 10px;
   margin-right: 50px;
+}
+.el-menu{
+  border-right: none;
+  margin: 30px 0 0 10px;
 }
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 300px;
@@ -89,11 +75,33 @@ export default {
 }
 .is-active{
   background: #7d6aa5 !important;
+  border-radius: 5px;
 }
 .el-menu-item-hover{
   &:hover{
     background-color: #7d6aa5 !important;
   }
 
+}
+.el-menu-item,
+.el-menu-item{
+  &:hover{
+    background-color: #7d6aa5;
+    border-radius: 5px;
+  }
+}
+.el-submenu__title{
+  &:hover{
+    background-color: #7d6aa5 !important;
+    border-radius: 5px;
+  }
+}
+.el-menu-item,
+.el-menu-item-hover,
+.el-submenu {
+  &:hover{
+    background-color: #7d6aa5 !important;
+    border-radius: 5px;
+  }
 }
 </style>

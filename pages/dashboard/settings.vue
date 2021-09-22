@@ -1,11 +1,15 @@
 <template>
   <div>
-    settings
+    <TestForm />
+
   </div>
 </template>
 
 <script>
+import SettingInput from "~/components/Dashboard/input/SettingInput";
+import TestForm from "~/components/forms/TestForm";
 export default {
+  components: {TestForm, SettingInput},
   head() {
     return {
       title: 'Настройки',

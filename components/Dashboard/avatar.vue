@@ -8,7 +8,7 @@
         <div class="block"><el-avatar :size="30"  src="https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png" alt="avatar"></el-avatar></div>
           <el-dropdown-menu slot="dropdown">
             <el-dropdown-item icon="el-icon-setting"><NuxtLink to="/dashboard/settings">Настройки</NuxtLink> </el-dropdown-item>
-            <el-dropdown-item icon="el-icon-switch-button">Выход</el-dropdown-item>
+            <el-dropdown-item icon="el-icon-switch-button"  ><NuxtLink to="/auth">Выход</NuxtLink></el-dropdown-item>
 
           </el-dropdown-menu>
         </el-dropdown>

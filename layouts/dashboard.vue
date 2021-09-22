@@ -8,7 +8,10 @@
     <div class="container">
 
       <div id="content" class="content">
-        <Nuxt />
+        <div v-if="loader" class="loader-anim">
+           <LoaderPage class="loader" />
+        </div>
+        <Nuxt v-if="!loader" />
       </div>
 
     </div>
@@ -21,10 +24,23 @@
 <script>
 import Sidebar from "~/components/Dashboard/sidebar";
 import HeaderDashboard from "~/components/Dashboard/headerDashboard";
+import LoaderPage from "~/components/loader/loaderPage";
 export default {
   name: "dashboard",
-  components: {HeaderDashboard, Sidebar},
-  computed: {}
+  components: {LoaderPage, HeaderDashboard, Sidebar},
+  computed: {},
+  data () {
+    return {
+    loader: true,
+
+    }
+  },
+
+  mounted() {
+    setTimeout(() => {
+      this.loader = false
+    }, 1500);
+  }
 }
 </script>
 
@@ -42,9 +58,9 @@ body{
 }
 
 .content{
-
+  position: relative;
   width: 100%;
-  max-width: 1600px;
+  max-width: 1590px;
   margin: 10px 20px;
  height: 90vh;
   overflow-y: scroll;
