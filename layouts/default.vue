@@ -1,11 +1,15 @@
 <template>
+<div>
 
-<Nuxt />
+  <Nuxt />
+</div>
 </template>
 
 <script>
+import NavBarMain from "~/components/navbar/NavBarMain";
 export default {
-  name: "default"
+  name: "default",
+  components: {NavBarMain}
 }
 </script>
 

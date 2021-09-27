@@ -1,5 +1,27 @@
 <template>
 <div>
+  <div>
+    <div v-if="loader" class="loader-anim">
+      <LoaderPage class="loader" />
+    </div>
+  </div>
+  <div v-if="step === 1 && !loader && !stepFinish">
+    <transition name="fade" mode="out-in">
+     <StepStartFirst  @nextpage="stepNext" />
+     </transition>
+
+  </div>
+  <div v-if="step === 2 && !loader && !stepFinish">
+    <transition name="fade" mode="out-in">
+    <StepStartSecond  @nextpage="stepNext" />
+    </transition>
+  </div>
+  <div v-if="step === 3 && !loader && !stepFinish">
+    <transition name="fade" mode="out-in">
+    <StepStartThird  @nextpage="endPage" />
+    </transition>
+  </div>
+<div v-if="stepFinish">
   <HeaderDashboard />
   <div class="content__all">
     <div class="sidebar__all">
@@ -8,9 +30,7 @@
     <div class="container">
 
       <div id="content" class="content">
-        <div v-if="loader" class="loader-anim">
-           <LoaderPage class="loader" />
-        </div>
+
         <Nuxt v-if="!loader" />
       </div>
 
@@ -18,6 +38,7 @@
   </div>
 
 
+</div>
 </div>
 </template>
 
@@ -32,11 +53,24 @@ export default {
   data () {
     return {
     loader: true,
+      stepFinish: false,
+      step: 1,
 
     }
   },
+  methods: {
+    stepNext(){
+   this.step++;
+
+    },
+    endPage(){
+      this.stepFinish = true;
+    }
+
+  },
 
   mounted() {
+    this.loader = true
     setTimeout(() => {
       this.loader = false
     }, 1500);
