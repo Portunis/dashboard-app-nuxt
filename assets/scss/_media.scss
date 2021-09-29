@@ -23,6 +23,12 @@
     top: 70px !important;
     right: 90px !important;
   }
+  .helper_body{
+    width: 1250px;
+    max-height: 810px;
+    border-radius: 10px;
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -38,7 +44,22 @@
       margin: 14px 20px !important;
     }
   }
-
+  .helper_body{
+    width: 930px;
+    overflow-y: scroll;
+    height:830px;
+    border-radius: 10px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 900px) {
+  .el-menu{
+    background-color: transparent;
+  }
+  .helper{
+    right: -60px;
+    bottom: -31px;
+  }
 }
 
 @media (max-width: 425px) {

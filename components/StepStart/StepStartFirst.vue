@@ -1,13 +1,20 @@
 <template>
 <div>
- <div class="animate">
-   <lottie :options="defaultOptions"  />
- </div>
-  <div class="text">
-    <p>Привет мой друг, добро пожаловать в нашу систему. </p>
-    <p>Я проведу тебе экскурсию по нашей административной панеле, но сначала расскажу немного о нас</p>
-    <div class="btn">
-      <button @click="$emit('nextpage')">Начать путь</button>
+  <div class="circle_left"></div>
+  <div class="circle_right"></div>
+  <div class="circle_center"></div>
+  <div class="circle_center-right"></div>
+  <div class="circle_center-bottom"></div>
+  <div class="body_animate">
+    <div class="animate">
+      <lottie :options="defaultOptions"  />
+    </div>
+    <div class="text">
+      <p>Привет, мой друг, добро пожаловать в нашу систему. </p>
+      <p>Я проведу тебе экскурсию по нашей административной панеле, но сначала расскажу немного о нас</p>
+      <div class="btn">
+        <button @click="$emit('nextpage')">Начать путь</button>
+      </div>
     </div>
   </div>
 </div>
@@ -18,6 +25,11 @@ import Lottie from 'vue-lottie/src/lottie.vue'
 import * as animationData from '/assets/js/animation/StepAnim/72259-team.json';
 export default {
   name: "error404",
+  head(){
+    return{
+      title: 'Знакомство'
+    }
+  },
   components: {Lottie },
   data () {
     return {
@@ -29,6 +41,75 @@ export default {
 
 
 <style lang="scss" scoped>
+.circle_center-bottom{
+  bottom: 48px;
+  right: 410px;
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background:  #fff;
+  -moz-border-radius: 70px;
+  -webkit-border-radius: 70px;
+  border-radius: 70px;
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+.circle_center-right{
+  top: 48px;
+  left: 960px;
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background:  #fff;
+  -moz-border-radius: 70px;
+  -webkit-border-radius: 70px;
+  border-radius: 70px;
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+.circle_center{
+  top: 500px;
+  left: 300px;
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background:  #f9c358;
+  -moz-border-radius: 70px;
+  -webkit-border-radius: 70px;
+  border-radius: 70px;
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+.circle_left{
+  top: -20px;
+  left: -25px;
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  background:  #7d6aa5;
+  -moz-border-radius: 70px;
+  -webkit-border-radius: 70px;
+  border-radius: 120px;
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+.circle_right{
+  top: 175px;
+  right: 85px;
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background:  #7d6aa5;
+  -moz-border-radius: 70px;
+  -webkit-border-radius: 70px;
+  border-radius: 70px;
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+.body_animate{
+  margin: 80px auto;
+
+}
 .animate{
   max-width: 800px;
   margin: 0 auto;

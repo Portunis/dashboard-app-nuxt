@@ -5,43 +5,33 @@
         <h1>Авторизация</h1>
         <form>
           <div class="input-auth">
-            <div class="form-container sign-up-container">
-              <form action="#">
-                <h1>Регистрация</h1>
 
-                <span>or use your email for registration</span>
-                <input type="text" placeholder="Имя" />
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Пароль" />
-                <button>Создать аккаунт</button>
-              </form>
-            </div>
             <div class="form-container sign-in-container">
               <form action="#">
-                <h1>Авторизация</h1>
+                <h1>Регистрация</h1>
+                <input type="text" placeholder="ФИО" />
+                <div class="error_body">
+                  <span class="error_input">Введите верный формат фио</span>
+                </div>
                 <input type="email" placeholder="Email" />
                 <div class="error_body">
-                  <span class="error_input">Введите верный логин</span>
+                  <span class="error_input">Введите верный формат email</span>
                 </div>
                 <input type="password" placeholder="Пароль" />
                 <div class="error_body">
-                  <span class="error_input">Введите верный пароль</span>
+                  <span class="error_input">Введите верный формат пароль</span>
                 </div>
-                <a href="#">Восстановить пароль?</a>
-                <button @click.prevent="notificationSub" :class="{active: checkAuth}"><i><LoaderCircle class="button-loader" v-if="checkAuth" /></i><p v-if="!checkAuth">Войти</p></button>
+                <button @click.prevent="notificationSub" :class="{active: checkAuth}"><i><LoaderCircle class="button-loader" v-if="checkAuth" /></i><p v-if="!checkAuth">Регистрация</p></button>
+                <NuxtLink class="register_url" to="/auth" >У меня есть аккаунт</NuxtLink>
               </form>
+
             </div>
             <div class="overlay-container">
               <div class="overlay">
-                <div class="overlay-panel overlay-left">
-                  <h1>Welcome Back!</h1>
-                  <p>To keep connected with us please login with your personal info</p>
-                  <button class="ghost" id="signIn">Sign In</button>
-                </div>
                 <div class="image-auth">
-<!--                <img src="@/assets/images/svg/auth/auth-bg.svg"  alt="auth-bg"/>-->
+                  <!--                <img src="@/assets/images/svg/auth/auth-bg.svg"  alt="auth-bg"/>-->
                   <LoaderAuth />
-              </div>
+                </div>
               </div>
             </div>
           </div>
@@ -49,7 +39,7 @@
             <button @click.prevent="notificationSub">Войти</button>
             <button>Регистрация</button>
           </div>
-        <NuxtLink class="register_url" to="/register" >У меня нет аккаунта</NuxtLink>
+
         </form>
 
       </div>
@@ -69,7 +59,7 @@ import LoaderCircle from "~/components/loader/loaderCircle";
 export default {
   head() {
     return {
-      title: 'Авторизация',
+      title: 'Регистрация',
 
     }
   },
@@ -107,6 +97,7 @@ export default {
 .error_body{
   position: relative;
   width: auto;
+
 }
 .error_input{
   text-align: left;
@@ -171,7 +162,7 @@ a {
 }
 button.active{
 
-    padding: 1px 39px !important;
+  padding: 1px 39px !important;
 
 }
 button {
@@ -187,6 +178,7 @@ button {
   text-transform: uppercase;
   transition: transform 80ms ease-in;
   cursor: pointer;
+  margin: 30px;
 
   p{
     font-family: 'Open Sans', sans-serif;
@@ -239,7 +231,6 @@ input {
 input[type~="text"], input[type~="password"],input[type~="email"]{
   font-family: 'Open Sans', sans-serif;
 }
-
 
 .container {
   background-color: #fff;
