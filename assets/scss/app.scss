@@ -1,0 +1,48 @@
+@import "~bootstrap/scss/bootstrap";
+@import "modals";
+
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: #2c3e50;
+    margin: 5px;
+}
+
+.grid-wrapper {
+    width: fit-content;
+    border: 1px solid black;
+    background-image: url(./assets/images/BeerOrDenis/game/stone_2.jpg);
+    background-size: 80px;
+    position: relative;
+
+    .cell {
+        width: 40px;
+        height: 40px;
+
+        &.cell-block {
+            .cell-icon.icon-brick {
+                box-shadow: 0 0 0 1px rgba(42, 41, 37, 0.7) inset;
+                background-image: url(./assets/images/BeerOrDenis/game/stone.jpg);
+            }
+        }
+
+        &.cell-player {
+            background-color: rgba(78, 239, 21, .2);
+        }
+
+        .cell-icon {
+            height: 100%;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .cell-emoji {
+            padding: 4px;
+            font-size: 22px;
+        }
+    }
+}
+.cell-img{
+  width: 40px;
+  height: 40px;
+}
