@@ -9,10 +9,10 @@
     <LoaderBeer/>
   <div class="footer">
     <p class="footer__p">Contacts:</p>
-    <ul class="footer-contact">
-      <li class="footer-contact__li">Telegram: 8-952-897-90-88</li>
-      <li class="footer-contact__li">Email: portunisone@gmail.com</li>
-    </ul>
+    <div class="footer-contact">
+      <p class="footer-contact__p">8-952-897-90-88</p>
+      <p class="footer-contact__p">portunisone@gmail.com</p>
+    </div>
   </div>
 
   </div>
@@ -74,7 +74,7 @@ export default {
     font-size: 32px;
     font-weight: 100;
     letter-spacing: 5px;
-    margin: 20px 0 30px;
+    margin: 20px auto 30px;
     text-align: center;
   }
 }
@@ -93,14 +93,35 @@ export default {
 .footer-contact{
   margin: 5% auto 0;
   max-width: 900px;
-  &__li{
+  &__p{
     font-family: 'Montserrat', sans-serif;
     font-size: 32px;
     font-weight: 100;
     letter-spacing: 5px;
     margin: 20px 0 30px;
     text-align: center;
-    list-style-type: none;
+    @media (max-width: 320px) {
+      font-size: 14px;
+
+    }
+  }
+  @media (min-width: 320px) {
+    max-width: 320px;
+    .footer-contact__p{
+      font-size: 14px;
+    }
+  }
+  @media (min-width: 375px) {
+    max-width: 375px;
+    .footer-contact__p{
+      font-size: 14px;
+    }
+  }
+  @media (min-width: 1024px) {
+    max-width: 1024px;
+    .footer-contact__p{
+      font-size: 32px;
+    }
   }
 }
 </style>
