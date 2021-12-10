@@ -7,7 +7,7 @@
 
 <script>
 import Lottie from 'vue-lottie/src/lottie.vue';
-import * as animationData from '/assets/js/animation/BeerOrDenis/beer-loader.json';
+import * as animationData from '/assets/js/animation/11045-buildin-a-web-page.json';
 
 export default {
   name: "loaderBeer",
@@ -22,12 +22,9 @@ export default {
 
 <style scoped>
 .loaderBeer{
-  height: 300px;
-  width: 300px;
-  margin-top: -150px;
-  margin-left: -150px;
-  left: 50%;
-  top: 50%;
-  position: absolute;
+  height: auto;
+  width: 1000px;
+
+  margin: 0 auto;
 }
 </style>
